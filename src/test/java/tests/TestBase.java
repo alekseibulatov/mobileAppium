@@ -33,6 +33,8 @@ public class TestBase {
                         "Invalid value for 'deviceHost'. Valid values are: browserstack / emulator "
                 );
         }
+        Configuration.timeout = 15000;
+        Configuration.pageLoadTimeout = 15000;
         Configuration.browserSize = null;
     }
 

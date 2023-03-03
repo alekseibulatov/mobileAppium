@@ -30,7 +30,7 @@ public class TestBase {
                 break;
             default:
                 throw new RuntimeException(
-                        "Invalid value for 'deviceHost'. Valid values are: browserstack / emulator "
+                        "Invalid value for 'deviceHost'. Valid values are: androi "
                 );
         }
         Configuration.timeout = 15000;

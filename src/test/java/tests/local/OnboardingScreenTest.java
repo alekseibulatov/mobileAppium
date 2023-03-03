@@ -11,7 +11,7 @@ public class OnboardingScreenTest extends TestBase {
 
 
     @Test
-    @Tag("local")
+    @Tag("emulator")
     public void onboardingTest() {
 
         OnboardingPage onboardingPage = new OnboardingPage();

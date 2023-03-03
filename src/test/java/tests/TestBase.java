@@ -23,7 +23,7 @@ public class TestBase {
             case "android":
                 Configuration.browser = BrowserstackDriver.class.getName();
                 break;
-            case "local":
+            case "emulator":
                 Configuration.browser = EmulatorDriver.class.getName();
                 break;
             default:

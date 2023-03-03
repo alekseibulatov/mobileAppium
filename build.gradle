@@ -68,8 +68,8 @@ task ios(type: Test) {
 }
 
 
-task local(type: Test) {
+task emulator(type: Test) {
     useJUnitPlatform {
-        includeTags 'local'
+        includeTags 'emulator'
     }
 }

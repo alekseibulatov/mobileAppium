@@ -22,10 +22,10 @@ public class TestBase {
         Configuration.browser = EmulatorDriver.class.getName();
 
         switch (deviceHost) {
-            case "browserstack":
+            case "android":
                 Configuration.browser = BrowserstackDriver.class.getName();
                 break;
-            case "emulator":
+            case "local":
                 Configuration.browser = EmulatorDriver.class.getName();
                 break;
             default:
@@ -50,7 +50,7 @@ public class TestBase {
         Attach.pageSource();
         closeWebDriver();
 
-        if (deviceHost.equals("browserstack")) {
+        if (deviceHost.equals("android")) {
             Attach.addVideo(sessionId);
         }
     }

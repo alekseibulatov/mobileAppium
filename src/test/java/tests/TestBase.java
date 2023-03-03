@@ -18,6 +18,7 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
+
         Configuration.browser = EmulatorDriver.class.getName();
 
         switch (deviceHost) {

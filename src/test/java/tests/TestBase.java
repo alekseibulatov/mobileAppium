@@ -14,12 +14,10 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class TestBase {
 
-    static String deviceHost = System.getProperty("deviceHost");
-
     @BeforeAll
     static void beforeAll() {
-
-         switch (deviceHost) {
+        String deviceHost = System.getProperty("deviceHost");
+        switch (deviceHost) {
             case "android":
                 Configuration.browser = BrowserstackDriver.class.getName();
                 break;
@@ -44,7 +42,7 @@ public class TestBase {
 
     @AfterEach
     void addAttachments() {
-
+        String deviceHost = System.getProperty("deviceHost");
         String sessionId = sessionId().toString();
 
         Attach.pageSource();

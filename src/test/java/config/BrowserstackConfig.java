@@ -4,7 +4,7 @@ package config;
 @BrowserstackConfig.LoadPolicy(BrowserstackConfig.LoadType.MERGE)
 @org.aeonbits.owner.Config.Sources(
         {"system:properties",
-                "classpath:android.properties",
+                "classpath:${env}.properties",
         })
 
 public interface BrowserstackConfig extends org.aeonbits.owner.Config {

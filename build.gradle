@@ -66,3 +66,10 @@ task ios(type: Test) {
         includeTags 'ios'
     }
 }
+
+
+task local(type: Test) {
+    useJUnitPlatform {
+        includeTags 'local'
+    }
+}

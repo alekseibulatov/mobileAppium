@@ -1,5 +1,6 @@
 package tests.local;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.OnboardingPage;
 import tests.TestBase;
@@ -10,6 +11,7 @@ public class OnboardingScreenTest extends TestBase {
 
 
     @Test
+    @Tag("local")
     public void onboardingTest() {
 
         OnboardingPage onboardingPage = new OnboardingPage();

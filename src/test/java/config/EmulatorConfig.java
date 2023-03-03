@@ -2,6 +2,7 @@ package config;
 
 import org.aeonbits.owner.Config;
 
+@EmulatorConfig.LoadPolicy(EmulatorConfig.LoadType.MERGE)
 @Config.Sources({
         "classpath:emulator.properties"
 })

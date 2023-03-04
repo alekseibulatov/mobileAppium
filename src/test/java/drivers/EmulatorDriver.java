@@ -22,9 +22,9 @@ import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 public class EmulatorDriver implements WebDriverProvider {
 
-    static EmulatorConfig emulatorConfig = ConfigFactory.create(EmulatorConfig.class, System.getProperties());
 
     public static URL getAppiumServerUrl() {
+        EmulatorConfig emulatorConfig = ConfigFactory.create(EmulatorConfig.class, System.getProperties());
         try {
             return new URL(emulatorConfig.appiumServer());
         } catch (MalformedURLException e) {
@@ -36,6 +36,7 @@ public class EmulatorDriver implements WebDriverProvider {
     @Nonnull
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
+        EmulatorConfig emulatorConfig = ConfigFactory.create(EmulatorConfig.class, System.getProperties());
 
         UiAutomator2Options options = new UiAutomator2Options();
         options.merge(capabilities);
@@ -52,6 +53,7 @@ public class EmulatorDriver implements WebDriverProvider {
     }
 
     private String getAppPath() {
+        EmulatorConfig emulatorConfig = ConfigFactory.create(EmulatorConfig.class, System.getProperties());
 
         File app = new File(emulatorConfig.appPath());
         if (!app.exists()) {

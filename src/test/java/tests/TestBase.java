@@ -43,13 +43,12 @@ public class TestBase {
     @AfterEach
     void addAttachments() {
         String deviceHost = System.getProperty("deviceHost");
-        String sessionId = sessionId().toString();
 
         Attach.pageSource();
         closeWebDriver();
 
         if (deviceHost.equals("android")) {
-            Attach.addVideo(sessionId);
+            Attach.addVideo(sessionId().toString());
         }
     }
 }

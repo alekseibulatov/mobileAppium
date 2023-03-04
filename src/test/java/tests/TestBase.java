@@ -44,7 +44,7 @@ public class TestBase {
     void addAttachments() {
         String deviceHost = System.getProperty("deviceHost");
 
-        Attach.pageSource();
+     //   Attach.pageSource();
         closeWebDriver();
 
         if (deviceHost.equals("android")) {

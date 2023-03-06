@@ -8,7 +8,7 @@ repositories {
     mavenCentral()
 }
 
-def allureVersion = "2.19.0"
+def allureVersion = "2.20.1"
 
 allure {
     report {
@@ -31,7 +31,6 @@ dependencies {
             "io.appium:java-client:8.3.0",
             "io.rest-assured:rest-assured:5.3.0",
             "io.qameta.allure:allure-rest-assured:$allureVersion",
-            "com.github.javafaker:javafaker:1.0.2",
             "org.junit.jupiter:junit-jupiter:5.9.2",
             "org.aeonbits.owner:owner:1.0.4",
             "commons-io:commons-io:2.11.0",

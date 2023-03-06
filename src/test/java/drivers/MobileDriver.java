@@ -35,7 +35,7 @@ public class MobileDriver implements WebDriverProvider {
     @SneakyThrows
     @Nonnull
     @Override
-    public WebDriver createDriver(Capabilities capabilities) {
+    public WebDriver createDriver(@Nonnull Capabilities capabilities) {
         EmulatorConfig emulatorConfig = ConfigFactory.create(EmulatorConfig.class);
 
         UiAutomator2Options options = new UiAutomator2Options();

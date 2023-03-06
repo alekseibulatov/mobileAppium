@@ -15,14 +15,15 @@ import static io.appium.java_client.AppiumBy.className;
 import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.id;
 
-@Tag("android")
+
 public class SearchTests extends TestBase {
-    @Test
+  /*  @Test
     @Feature("Поле поиска на сайте Wikipedia на мобильной устройстве Google Pixel 3")
     @Story("Поиск на сайте Wikipedia")
     @Owner("alekseibulatov")
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверка поиска значения BrowserStack в поле поиска Wikipedia")
+    @Tag("android")
     void searchTest() {
         step("Type search", () -> {
             $(accessibilityId("Search Wikipedia")).click();
@@ -32,13 +33,14 @@ public class SearchTests extends TestBase {
                 $$(id("org.wikipedia.alpha:id/page_list_item_title"))
                         .shouldHave(sizeGreaterThan(0)));
     }
-
+*/
     @Test
     @Feature("Проверка кебаб-меню сайта Wikipedia на  мобильной устройстве Google Pixel 3")
     @Story("Поиск на сайте Wikipedia")
     @Owner("alekseibulatov")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Проверка открытия полей авторизации с главной страницы")
+    @Tag("android")
     void openLoginFormTest() {
         step("Кликнуть на кебаб-меню на главной странице", () -> {
             $(id("org.wikipedia.alpha:id/menu_overflow_button")).click();

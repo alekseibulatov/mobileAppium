@@ -9,7 +9,7 @@ import static java.lang.String.format;
 
 public class Browserstack {
     public static String getVideoUrl(String sessionId) {
-        AuthConfig authConfig = ConfigFactory.create(AuthConfig.class);
+        AuthConfig authConfig = ConfigFactory.create(AuthConfig.class, System.getProperties());
         String url = format("https://api.browserstack.com/app-automate/sessions/%s.json", sessionId);
 
         return given()

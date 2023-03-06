@@ -16,9 +16,12 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
+        Configuration.browser = EmulatorDriver.class.getName();
+
         String deviceHost = System.getProperty("deviceHost");
         switch (deviceHost) {
             case "android":
+            case "ios":
                 Configuration.browser = BrowserstackDriver.class.getName();
                 break;
             case "emulator":
@@ -26,7 +29,7 @@ public class TestBase {
                 break;
             default:
                 throw new RuntimeException(
-                        "Invalid value for 'deviceHost'. Valid values are: androi "
+                        "Invalid value for 'deviceHost'. Valid values are: android / ios / emulator "
                 );
         }
         Configuration.timeout = 15000;
@@ -44,7 +47,7 @@ public class TestBase {
     void addAttachments() {
         String deviceHost = System.getProperty("deviceHost");
 
-     //   Attach.pageSource();
+        //   Attach.pageSource();
         closeWebDriver();
 
         if (deviceHost.equals("android")) {

@@ -24,9 +24,10 @@ public class MobileDriver implements WebDriverProvider {
 
 
     public static URL getAppiumServerUrl() {
-        EmulatorConfig emulatorConfig = ConfigFactory.create(EmulatorConfig.class, System.getProperties());
+     //   EmulatorConfig emulatorConfig = ConfigFactory.create(EmulatorConfig.class, System.getProperties());
         try {
-            return new URL(emulatorConfig.appiumServer());
+          //  return new URL(emulatorConfig.appiumServer());
+            return new URL("http://localhost:4723/wd/hub");
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

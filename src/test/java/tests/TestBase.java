@@ -3,7 +3,7 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import drivers.BrowserstackDriver;
-import drivers.EmulatorDriver;
+import drivers.MobileDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -16,7 +16,7 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.browser = EmulatorDriver.class.getName();
+        Configuration.browser = MobileDriver.class.getName();
 
         String deviceHost = System.getProperty("deviceHost");
         switch (deviceHost) {
@@ -25,7 +25,7 @@ public class TestBase {
                 Configuration.browser = BrowserstackDriver.class.getName();
                 break;
             case "emulator":
-                Configuration.browser = EmulatorDriver.class.getName();
+                Configuration.browser = MobileDriver.class.getName();
                 break;
             default:
                 throw new RuntimeException(

@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import drivers.BrowserstackDriver;
 import drivers.MobileDriver;
@@ -9,6 +10,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.remote.SessionId;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -46,12 +48,13 @@ public class TestBase {
     @AfterEach
     void addAttachments() {
         String deviceHost = System.getProperty("deviceHost");
+        SessionId sessionId = Selenide.sessionId();
 
         //   Attach.pageSource();
         closeWebDriver();
 
         if (deviceHost.equals("android")) {
-            Attach.addVideo(sessionId().toString());
+            Attach.addVideo(sessionId.toString());
         }
     }
 }
